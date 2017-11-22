@@ -18,3 +18,12 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return "this is about page";
 });
+
+//belajar route parameter kuncinya pakai kurawal
+Route::get('/profile/{username?}', function ($username="") {
+    return "This is profile page for user: ".$username;
+});
+
+Route::get('/profile/{username}/comment/{id}', function ($username, $id) {
+    return "Comment ID: ".$id." for user ".$username;
+});
