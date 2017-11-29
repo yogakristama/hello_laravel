@@ -11,19 +11,33 @@
 |
 */
 
-Route::get('/', function () {
-    return "hello from home";
-});
+$controller = function(){
+    return view ('welcome');
+};
 
-Route::get('/about', function () {
-    return "this is about page";
-});
+route::get('/',$controller);
 
-//belajar route parameter kuncinya pakai kurawal
-Route::get('/profile/{username?}', function ($username="") {
-    return "This is profile page for user: ".$username;
-});
+//membuat controller menggunakan class
+route::get('/welcome2',"UserController@welcome");
+ //"UserController@welcome = UserController = class dan welcome adalah method
 
-Route::get('/profile/{username}/comment/{id}', function ($username, $id) {
-    return "Comment ID: ".$id." for user ".$username;
-});
+ route::get('/about',"UserController@about");
+
+ route::get('/contact',"UserController@contact");
+
+// Route::get('/', function () {
+//     return "hello from home";
+// });
+
+// Route::get('/about', function () {
+//     return "this is about page";
+// });
+
+// //belajar route parameter kuncinya pakai kurawal
+// Route::get('/profile/{username?}', function ($username="") {
+//     return "This is profile page for user: ".$username;
+// });
+
+// Route::get('/profile/{username}/comment/{id}', function ($username, $id) {
+//     return "Comment ID: ".$id." for user ".$username;
+// });
