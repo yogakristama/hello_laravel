@@ -25,6 +25,9 @@ route::get('/welcome2',"UserController@welcome");
 
  route::get('/contact',"UserController@contact");
 
+ route::get('/product/discount',"ProductController@discount");
+ 
+
 // Route::get('/', function () {
 //     return "hello from home";
 // });
