@@ -26,6 +26,17 @@ route::get('/welcome2',"UserController@welcome");
  route::get('/contact',"UserController@contact");
 
  route::get('/product/discount',"ProductController@discount");
+
+ route::get('/suhu',"SuhuController@suhu");
+
+ route::get('/products',"ProductController@index");
+
+ route::get('/products/add',"ProductController@add");
+
+ route::post('/products/add',"ProductController@add");
+
+ 
+
  
 
 // Route::get('/', function () {
