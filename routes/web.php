@@ -35,7 +35,14 @@ route::get('/welcome2',"UserController@welcome");
 
  route::post('/products/add',"ProductController@add");
 
+ route::get('/products/detail/{product_id}',"ProductController@detail");
+
+
+ route::get('/products/edit/{product_id}',"ProductController@edit");
+
+ route::post('/products/edit/{product_id}',"ProductController@edit");
  
+ route::post('/products/delete',"ProductController@delete");
 
  
 

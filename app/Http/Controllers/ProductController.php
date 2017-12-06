@@ -55,4 +55,59 @@ class ProductController extends Controller {
     ];
         return view('product/discount', $data);
     }
+
+
+    function detail($product_id, Request $request){
+        $products = DB::select('Select * from products where id=?', [$product_id]);
+        // dd($products);
+        //ambil first element
+        $product = reset($products);
+        $data = [
+            'product'=>$product
+        ];
+
+        return view ('product/detail', $data);
+    }
+
+
+    function edit($product_id, Request $request){
+        $products = DB::select('Select * from products where id=?', [$product_id]);
+        
+        $product = reset($products);
+        
+        $success= false;
+
+        if($request->isMethod('post')){
+            $productName = $request->input('product_name');
+            $productPrice = $request->input('product_price');
+            $rating = $request->input('rating');
+            
+            $returnValue = DB::update('update products set name=?, price=?, rating=? where id=?', 
+            [$productName, $productPrice, $rating, $product_id]);
+
+            if($returnValue){
+                $success = true;
+            }
+        }
+
+        $data = [
+            'product'=>$product,
+            'success'=>$success
+        ];
+
+        return view ('product/edit', $data);
+    }
+
+
+    function delete(Request $request){
+        $productId = $request->input('product_id');
+
+        $returnValue = DB::delete('DELETE from products WHERE id=?', [$productId]);
+
+        if($returnValue){
+            return "data deleted";
+        }else {
+            return "Error";
+        }
+    }
 }

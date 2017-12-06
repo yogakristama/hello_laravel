@@ -7,7 +7,7 @@
         <div class="well">
             <a href="/products/add" class="btn btn-small btn-success"> Add New </a>
         </div>
-        
+
             <table class ="table table-bordered">
             <thead>
             <tr>
@@ -15,6 +15,7 @@
             <th>Name</th>
             <th>Price</th>
             <th>Rating</th>
+            <th>Action</th>
             </tr>
             </thead>
             @foreach ($products as $product)
@@ -23,6 +24,7 @@
             <td>{{$product->name}}</td>
             <td>{{$product->price}}</td>
             <td>{{$product->rating}}</td>
+            <td><a href="/products/detail/{{$product->id}}" class ="btn btn-default btn-xs">View </a></td>
             </tr>
             @endforeach
 
