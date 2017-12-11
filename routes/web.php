@@ -44,6 +44,12 @@ route::get('/welcome2',"UserController@welcome");
  
  route::post('/products/delete',"ProductController@delete");
 
+ route::get('/media',"MediaController@index");
+
+ route::get('/media/upload',"MediaController@upload");
+
+ route::post('/media/upload',"MediaController@upload");
+
  
 
 // Route::get('/', function () {

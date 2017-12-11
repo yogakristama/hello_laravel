@@ -42,6 +42,12 @@ return [
     */
 
     'disks' => [
+        'images' => [
+            'driver' => 'local',
+            'root' => storage_path('app/images'),
+        ],
+
+
 
         'local' => [
             'driver' => 'local',
