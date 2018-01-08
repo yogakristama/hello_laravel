@@ -119,4 +119,10 @@ class ProductController extends Controller {
             return "Error";
         }
     }
+
+    function getList (){
+        return view('product/list');
+    }
+
+
 }

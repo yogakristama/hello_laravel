@@ -52,7 +52,9 @@ route::get('/welcome2',"UserController@welcome");
 
  
  route::get('/api/products',"ApiController@getProducts");
- 
+
+ route::get('/products/list',"ProductController@getList");
+
 
 // Route::get('/', function () {
 //     return "hello from home";
