@@ -31,7 +31,7 @@ class MediaController extends Controller{
 
             if($mainpicture){
             $dir = storage_path ('app/public');
-            $mainpicture->move($dir, $files->getClientOriginalName());
+            $mainpicture->move($dir, $mainpicture->getClientOriginalName());
             }
 
             $gallery = $request->file('gallery');

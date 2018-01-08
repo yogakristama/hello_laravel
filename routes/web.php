@@ -51,6 +51,8 @@ route::get('/welcome2',"UserController@welcome");
  route::post('/media/upload',"MediaController@upload");
 
  
+ route::get('/api/products',"ApiController@getProducts");
+ 
 
 // Route::get('/', function () {
 //     return "hello from home";

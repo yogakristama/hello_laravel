@@ -21,6 +21,15 @@ class ProductController extends Controller {
         ];
         
         if ($request->isMethod('post')){
+
+            //untuk memvalidasi jadi kalau kosong ga bisa diisi
+
+            $request->validate([
+                'product_name' => 'required|alpha',
+                'product_price' => 'required',
+                'rating'=> 'required|numeric',
+            ]);
+
             $productName = $request->input('product_name');
             $productPrice = $request->input('product_price');
             $rating = $request->input('rating');
